@@ -7,7 +7,7 @@ jobs:
     - image: testim/docker-cli
     steps:
       - run: mkdir -p $CIRCLE_TEST_REPORTS/testim/
-      - run: testim --token "FhWpoM5ezR5kvXYN4BgDkHkj5ijEXmjuUnugYYapkPxgkYkeKY" --project "yUHggaUM53fuXM0PejOu" --grid "testim-ha-grid" --mode "selenium" --test-plan "CrossbrowserPlan" --report-file $CIRCLE_TEST_REPORTS/testim/results.xml --turbo-mode
+      - run: testim --token $Token --project $Project --grid "testim-ha-grid" --mode "selenium" --test-plan "CrossbrowserPlan" --result-label "CircleCIDemo" --report-file $CIRCLE_TEST_REPORTS/testim/results.xml --turbo-mode
       - store_artifacts:
           path: /tmp/circleci-test-results
       - store_test_results:
